@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+  <div class="row nav">
+    <div class="col-2"></div>
+    <div class="col-7">
+      <h1>Catalog App</h1>
+    </div>
+    <div class="col-1 log">
+      {% if 'username' not in session %}
+        <a href='{{url_for('showLogin')}}'>Login</a>
+      {% else %}
+        <a href='{{url_for('gdisconnect')}}'>Logout</a>
+      {% endif %}
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="row catalog">
+      <div class="col-3 catogories">
+        <h2>Categories</h2>
+        {% for category in categories %}
+         <a href = '{{url_for('showItems', category_name = category.name)}}'>
+            <div class="category_name">
+              <h3>{{category.name}}</h3>
+            </div>
+         </a>
+        {% endfor %}
+      </div>
+      <div class="col-9">
+         <div class="space"></div><div class="items">
+         <h2>{{category.name}}</h2>
+
+         {% for item in items %}
+         <a href = '{{url_for('showItem', item_title = item.title, category_name = category.name)}}'>
+        <div class="item">
+          <h3>{{item.title}}</h3>
+        </div>
+        </a>
+        {% endfor %}
+     </div>
+   </div>
+</div>
+<div class="col-2"></div>
+</body>
+</html>

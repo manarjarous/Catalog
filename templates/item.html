@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+  <div class="row nav">
+    <div class="col-2"></div>
+    <div class="col-7">
+      <h1>Catalog App</h1>
+    </div>
+    <div class="col-1 log">
+      {%if 'username' not in session %}
+        <a href='{{url_for('showLogin')}}'>Login </a>
+      {% else %}
+        <a href='{{url_for('gdisconnect')}}'>Logout </a>
+      {% endif %}
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8 catalog">
+      <h2>{{item.title}}</h2>
+      {{item.description}}
+      <div class="item">
+        <a href='{{url_for('editItem', item_title = item.title, category_name = category.name) }}'>Edit</a>|
+        <a href='{{url_for('deleteItem', item_title = item.title, category_name = category.name) }}'>Delete</a>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+* {
+	font-family: "Helvetica Neue Bold", Roboto, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+body {
+	background: lightgrey;
+}
+
+h1 {
+	font-family: "Helvetica Neue Light", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 40px;
+  color: #fff;
+	padding: 5px;
+	position: relative;
+}
+
+h2 {
+	font-size: 24px;
+	color: #42C3C9;
+	line-height: 29px;
+}
+
+h3 {
+	font-size: 16px;
+	color: red;
+	line-height: 23px;
+}
+
+
+ .log a {
+	 color: white;
+	 padding: 10px;
+	 background: red;
+	 top: 20px;
+	 position: relative;
+ }
+
+.log a:hover{
+color: black;
+}
+
+ .space {
+	 width: 2px;
+	 height: 80%;
+	 position: relative;
+	 top: 10%;
+	 background: lightgrey;
+ }
+
+ .items {
+	 position: absolute;
+	 top: 10px;
+	 left: 5%;
+ }
+
+ .catogories {
+	 position: relative;
+	 top: 10px;
+	 left: 10px;
+ }
+
+ .category_name:hover {
+
+
+}
+.category_name {
+	color: red;
+}
+
+.nav {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background: #333;
+}
+
+.catalog {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	top: 100px;
+	background: white;
+	border: 2px grey;
+}
+
+.title {
+	position: relative;
+	height: 50px;
+  left: 30px;
+	top: 5px;
+}
+
+.form {
+	position: relative;
+	height: 300px;
+	top: 50px;
+
+
+}
+
+.item a{
+	color: red;
+}
